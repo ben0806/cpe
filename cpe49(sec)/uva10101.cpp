@@ -34,7 +34,7 @@ int main(){
         count++;
         a(num);
         if(num==0){
-			cout<<" 0";
+		cout<<" 0";
         }
         cout<<endl;
     }
