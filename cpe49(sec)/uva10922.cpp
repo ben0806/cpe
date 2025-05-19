@@ -1,35 +1,31 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-int a(int num){
-    if(num<10) return num;
-    return a(num/10)+num%10;
+int t(int a){
+    if(a>=10) return t(a/10)+a%10;
+    return a;
 }
 int main(){
     string s;
     while(cin>>s){
         cout<<s;
         if(s=="0")break;
-        int num=0;
         int degree=0;
+        int sum=0;
         for(int i=0;i<s.length();i++){
-            num+=s[i];
+            sum+=int(s[i]-'0');
         }
-        if(num%9==0){
+        if(sum%9==0){
             degree++;
         }
-        else{
-            cout<<"is not a multiple of 9.";
-            break;
-        }
-        while(num>10){
-            num+=a(num);
+        while(sum>10){
+            sum=t(sum);
             degree++;
         }
-        if(num==9){
+        if(sum==9){
             cout<<" is a multiple of 9 and has 9-degree "<<degree++<<"."<<endl;
         }
         else{
-            cout<<" is not a multiple of 9.";
+            cout<<" is not a multiple of 9"<<endl;
         }
     }
 }
