@@ -11,7 +11,7 @@ int main(){
         if(s=="0")break;
         int num=0;
         int degree=0;
-        for(int i=0;s.length();i++){
+        for(int i=0;i<s.length();i++){
             num+=s[i];
         }
         if(num%9==0){
